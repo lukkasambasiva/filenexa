@@ -1,0 +1,172 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FileNexa – Free Online PDF, Word, Excel & Image Tools</title>
+<meta name="description" content="FileNexa provides free online PDF, Word, Excel, JPG and QR tools. Convert, merge, scan and manage files directly in your browser."><link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://unpkg.com/html5-qrcode" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://unpkg.com/docx-preview@0.3.6/dist/docx-preview.min.js"></script>
+</head>
+<body>
+<header class="header">
+<div class="brand-text">
+    <h1>FileNexa</h1>
+    <span>Free Online File Tools</span>
+</div> 
+
+ <button id="menu-btn" class="menu-btn" aria-label="Open menu">☰</button>
+  <nav id="nav-menu">
+    <button onclick="openTool('jpg-pdf')">🖼️ JPG → PDF</button><button onclick="openTool('pdf-jpg')">📄 PDF → JPG</button>
+    <button onclick="openTool('text-qr')">🔳 Text → QR</button><button onclick="openTool('qr-scanner')">📷 QR Scanner</button>
+    <button onclick="openTool('pdf-word')">📝 PDF → Word</button><button onclick="openTool('word-pdf')">📃 Word → PDF</button>
+    <button onclick="openTool('pdf-excel')">📊 PDF → Excel</button><button onclick="openTool('excel-pdf')">📈 Excel → PDF</button>
+    <button onclick="openTool('merge-pdf')">📚 Merge PDF</button><button onclick="openTool('page-numbers')">🔢 Page Numbers</button>
+    <span class="nav-divider"></span>
+    <button onclick="openInfo('about')">About</button><button onclick="openInfo('how')">How to Use</button><button onclick="openInfo('faq')">FAQ</button>
+  </nav>
+</header>
+<div class="page-layout"><main>
+  <div class="top-ad"><div class="ad-label">Advertisement</div><div class="ad-box"><span>Advertisement</span></div></div>
+  <section class="hero"><div class="hero-content"><div class="hero-badge">⚡ Fast • Free • Browser Based</div><h2>Free Online File Tools <span>in One Place</span></h2>
+<p>Convert, merge, scan and manage PDF, Word, Excel, JPG and QR files easily.</p><div class="hero-pills"><span>🔒 Private</span><span>⚡ Fast</span><span>💻 Browser Based</span><span>🆓 Free Tools</span></div></div></section>
+  <section class="tools-section"><div class="section-heading"><div><span class="section-mini">TOOLS</span><h2>Choose a Tool</h2></div><p>Select any tool to get started</p></div>
+    <section class="tools-grid">
+      <button class="tool-card tool-blue" onclick="openTool('jpg-pdf')"><span>🖼️</span><strong>JPG to PDF</strong><small>Images → PDF</small></button>
+      <button class="tool-card tool-purple" onclick="openTool('pdf-jpg')"><span>📄</span><strong>PDF to JPG</strong><small>PDF pages → Images</small></button>
+      <button class="tool-card tool-green" onclick="openTool('text-qr')"><span>🔳</span><strong>Text to QR</strong><small>Create QR code</small></button>
+      <button class="tool-card tool-orange" onclick="openTool('qr-scanner')"><span>📷</span><strong>QR Scanner</strong><small>Scan QR codes</small></button>
+      <button class="tool-card tool-red" onclick="openTool('pdf-word')"><span>📝</span><strong>PDF to Word</strong><small>PDF → DOCX</small></button>
+      <button class="tool-card tool-cyan" onclick="openTool('word-pdf')"><span>📃</span><strong>Word to PDF</strong><small>DOCX → PDF</small></button>
+      <button class="tool-card tool-indigo" onclick="openTool('pdf-excel')"><span>📊</span><strong>PDF to Excel</strong><small>PDF → XLSX</small></button>
+      <button class="tool-card tool-teal" onclick="openTool('excel-pdf')"><span>📈</span><strong>Excel to PDF</strong><small>XLSX → PDF</small></button>
+      <button class="tool-card tool-pink" onclick="openTool('merge-pdf')"><span>📚</span><strong>Merge PDF</strong><small>Combine PDFs</small></button>
+      <button class="tool-card tool-gold" onclick="openTool('page-numbers')"><span>🔢</span><strong>Page Numbers</strong><small>Add page numbers</small></button>
+    </section>
+  </section>
+  <div class="content-ad"><div class="ad-label">Advertisement</div><div class="ad-box large"><span>Advertisement</span></div></div>
+  <section id="tool-content"><div class="welcome-box"><div class="welcome-icon">🛠️</div><h2>Select a Tool</h2><p>Choose any tool above to get started.</p></div></section>
+  <div class="bottom-ad"><div class="ad-label">Advertisement</div><div class="ad-box"><span>Advertisement</span></div></div>
+</main></div>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <!-- BRAND / ABOUT -->
+        <div class="footer-column footer-brand">
+    <h3>FileNexa</h3>
+    <p>Free online tools for converting, merging, scanning and managing PDF, Word, Excel, JPG and QR files.</p>
+    <p class="footer-note">Simple, fast and easy to use.</p>
+</div>
+
+
+        <!-- POPULAR TOOLS -->
+        <div class="footer-column">
+
+            <h4>Popular Tools</h4>
+
+            <button onclick="openTool('jpg-pdf')">
+                JPG to PDF
+            </button>
+
+            <button onclick="openTool('pdf-jpg')">
+                PDF to JPG
+            </button>
+
+            <button onclick="openTool('pdf-word')">
+                PDF to Word
+            </button>
+
+            <button onclick="openTool('word-pdf')">
+                Word to PDF
+            </button>
+
+            <button onclick="openTool('pdf-excel')">
+                PDF to Excel
+            </button>
+
+            <button onclick="openTool('excel-pdf')">
+                Excel to PDF
+            </button>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+        <div class="footer-column">
+
+            <h4>Information</h4>
+
+            <button onclick="showInfoSection('about')">
+                About Us
+            </button>
+
+            <button onclick="showInfoSection('how-to-use')">
+                How to Use
+            </button>
+
+            <button onclick="showInfoSection('faq')">
+                FAQ
+            </button>
+
+            <button onclick="showInfoSection('security')">
+                File Security
+            </button>
+
+            <button onclick="showInfoSection('contact')">
+                Contact
+            </button>
+
+        </div>
+
+
+        <!-- LEGAL & PRIVACY -->
+        <div class="footer-column">
+ 
+            <h4>Legal & Privacy</h4>
+
+            <button onclick="showInfoSection('privacy')">
+                Privacy Policy
+            </button>
+
+            <button onclick="showInfoSection('terms')">
+                Terms & Conditions
+            </button>
+
+            <button onclick="showInfoSection('cookies')">
+                Cookie Policy
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>© 2026 FileNexa. All rights reserved.</p>
+
+        <p>
+            Your files are processed locally in your browser
+            whenever supported by the selected tool.
+        </p>
+
+    </div>
+
+</footer>
+<div id="global-loader" style="display:none"><div class="loader-overlay"><div class="loader-box"><div class="loader-spinner"></div><div id="loader-message">Processing...</div></div></div></div>
+<script src="script.js"></script>
+</body></html>
