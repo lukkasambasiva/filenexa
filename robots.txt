@@ -1,4 +1,4 @@
-User-agent: *
+ User-agent: *
 Allow: /
 
-Sitemap: https://lukkasambasiva.github.io/filenexa/sitemap.xml
+Sitemap: https://filenexa.onrender.com/sitemap.xml
