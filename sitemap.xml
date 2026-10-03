@@ -1,8 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
+ <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
         <loc>https://lukkasambasiva.github.io/filenexa/</loc>
+    </url>
+
+    <url>
+        <loc>https://lukkasambasiva.github.io/filenexa/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://lukkasambasiva.github.io/filenexa/faq.html</loc>
+    </url>
+
+    <url>
+        <loc>https://lukkasambasiva.github.io/filenexa/contact.html</loc>
+    </url>
+
+    <url>
+        <loc>https://lukkasambasiva.github.io/filenexa/privacy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://lukkasambasiva.github.io/filenexa/terms.html</loc>
     </url>
 
 </urlset>
